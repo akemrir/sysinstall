@@ -1,0 +1,5 @@
+mkdir -p before pacman
+  Pacman does not create /var/lib/pacman or /var/log directories but
+  creates /var/cache/pacman/pkg.  Logic behind this is to avoid using
+  pacman -r option with wrong directory by mistake, but IMO this is bug.
+  Anyway we need to create directories for pacman.

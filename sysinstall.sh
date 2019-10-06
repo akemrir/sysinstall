@@ -95,11 +95,10 @@ install()
 	# TODO do not remove /boot/efi
 	rm -rf -- "$mnt" || true
 
-	log 'Mounting /dev, /proc, /run, /sys...'
-	mkdir -- "$mnt/dev" "$mnt/proc" "$mnt/run" "$mnt/sys"
+	log 'Mounting /dev, /proc, /sys...'
+	mkdir -- "$mnt/dev" "$mnt/proc" "$mnt/sys"
 	mount -B -- /dev "$mnt/dev"
 	mount -B -- /proc "$mnt/proc"
-	mount -B -- /run "$mnt/run"
 	mount -B -- /sys "$mnt/sys"
 
 	log 'Installing packages...'
@@ -130,6 +129,9 @@ install()
 	log 'Init pacman keyring...'
 	chroot -- "$mnt" pacman-key --init
 	chroot -- "$mnt" pacman-key --populate archlinux
+
+	# TODO
+	echo '...' > /mnt/etc/hostname
 }
 
 case "${disk:+$fstab}" in
