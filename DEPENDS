@@ -1,0 +1,20 @@
+sysinstall
+|-- sh
+|-- shift
+|-- exit
+|-- getopts
+|-- read
+|-- true
+|-- test
+|-- printf
+|-- mkdir
+|-- rm
+|-- sed
+|-- mount
+|-- pacman
+|-- chroot
+|-- fdisk
+|-- mkfs.vfat
+|-- mkswap
+|-- mkfs.ext4
+`-- free
